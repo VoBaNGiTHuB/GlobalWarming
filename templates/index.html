@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Глобальное потепление</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #3498db, #5dade2, #85c1e9, #aed6f1);
+            background-size: 100%;
+            transition: background 0.4s;
+            margin: 0;
+            padding: 0;
+            color: black;
+            font-family: 'Arial Black', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+        }
+
+        h1 {
+            padding: 20px;
+        }
+
+        p {
+            font-size: 20px;
+            margin: 20px;
+            text-align: center;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: white;
+            border: 2px solid black;
+            border-radius: 5px;
+        }
+
+        a:hover {
+            background-color: black;
+            color: white;
+        }
+
+        .content-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .image {
+            flex: 2;
+            margin: 10px;
+            text-align: center;
+        }
+
+        .video {
+            flex: 1;
+            margin: 10px;
+            text-align: center;
+        }
+
+        video {
+            max-width: 78.6%;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Информация о глобальном потеплении</h1>
+    
+    <div class="content-container">
+        <div class="video">
+            <video width="1920" height="1080" controls autoplay loop muted>
+                <source src="https://cdn.free-stock.video/1482021/water-snow-lagoon-nature-glacier-iceland-ice-8315-small.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="image">
+            <img src="{{ url_for('static', filename='global_warming.jpg') }}" alt="Global Warming Image" style="max-width: 720px; height: auto;">
+            <p>Глобальное потепление — долгосрочное повышение средней температуры климатической системы Земли.По мнению подавляющего большинства учёных, основной причиной глобального потепления является человеческая деятельность (антропогенный фактор).</p>
+            <a href="/problems">Посмотреть проблемы</a>
+            <a href="/map">Открыть карту</a>
+        </div>
+        <div class="video">
+            <video width="1920" height="1920" controls autoplay loop muted>
+                <source src="https://cdn.free-stock.video/3082021/nature-snow-ice-ice-water-antarctica-icebergs-9181-small.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <script>
+        document.body.style.background = 'linear-gradient(to bottom, #3498db, #5dade2, #85c1e9, #aed6f1)';
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Карта температуры</title>
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Карта температуры</h1>
+    <p>Ниже представлена интерактивная карта с данными о температуре по всему миру.</p>
+    <div id="map"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
+
+    <script>
+        var map = L.map('map').setView([0, 0], 2);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 18,
+        }).addTo(map);
+
+        // Добавление данных о температуре (пример)
+        var heatData = [
+            [51.5, -0.09, 0.2], 
+        ];
+
+        L.heatLayer(heatData, {radius: 25}).addTo(map);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Проблемы вызываемые глобальным потеплением</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #FFC371, #FF5F6D, #6B6B83);
+            background-size: 100%;
+            transition: background 0.4s;
+            margin: 0;
+            padding: 0;
+            color: black; /* Цвет текста черный */
+            font-family: 'Arial Black', sans-serif; /* Шрифт Arial Black */
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+        }
+
+        h1 {
+            padding: 20px;
+        }
+
+        p {
+            font-size: 20px;
+            margin: 20px;
+        }
+
+        ul {
+            font-size: 16px;
+            margin: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+    </style>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <h1>Проблемы и эффекты, вызываемые глобальным потеплением</h1>
+    <p>Проблемы, вызываемые глобальным потеплением:</p>
+    <ul>
+        <li><strong>Повышение уровня морей:</strong> Увеличение температуры воды приводит к расширению самой воды, а также таянию ледников, что способствует поднятию уровня морей и угрозе для прибрежных районов.</li>
+        <li><strong>Изменения в экосистемах:</strong> Глобальное потепление ставит под угрозу множество видов животных и растений, которые не способны быстро адаптироваться к изменяющимся условиям, и может привести к утрате биоразнообразия.</li>
+        <li><strong>Частые и экстремальные погодные явления:</strong> Повышение температуры земной поверхности увеличивает вероятность экстремальных погодных событий, таких как сильные штормы, засухи, паводки и пожары.</li>
+    </ul>
+
+    <div id="temperature-chart"></div>
+
+
+    <script>
+        var trace1 = {
+            x: ['2010', '2015', '2020', '2025', '2030'],
+            y: [0.6, 0.8, 1.1, 1.5, 1.9],
+            type: 'scatter',
+            mode: 'lines',
+            line: {
+                color: 'rgb(255, 95, 109)' // Цвет графика соответствует цвету на странице
+            }
+        };
+
+        var data = [trace1];
+
+        var layout = {
+            title: 'Прогноз изменения средней глобальной температуры',
+            xaxis: {
+                title: 'Год'
+            },
+            yaxis: {
+                title: 'Температура (°C)'
+            },
+            plot_bgcolor: 'rgba(0,0,0,0)',
+            paper_bgcolor: 'rgba(0,0,0,0)',
+            font: {
+                color: 'black' // Цвет текста графика изменен на черный
+            }
+        };
+
+        Plotly.newPlot('temperature-chart', data, layout);
+
+        document.addEventListener('scroll', function() {
+            var scroll_position = window.scrollY;
+            var color_value = scroll_position % 255;
+            var color_hex = rgbToHex(color_value, 255, 131); // Преобразование RGB в HEX
+            document.querySelector('.js-plotly-plot').style.color = color_hex;
+        });
+
+        // Функция преобразования RGB в HEX
+        function componentToHex(c) {
+            var hex = c.toString(16);
+            return hex.length == 1 ? "0" + hex : hex;
+        }
+
+        function rgbToHex(r, g, b) {
+            return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+        }
+        
+    </script>
+
+    <a href="javascript:window.history.back();">Вернуться на главную</a>
+    <button onclick="window.location.href = 'https://ru.wikipedia.org/wiki/Глобальное_потепление';">Вики страница</button>
+</body>
+</html>

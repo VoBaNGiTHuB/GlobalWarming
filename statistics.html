@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Графики и статистика по глобальному потеплению</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #003366;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+        .chart-container {
+            width: 100%;
+            margin: 30px 0; /* Добавляем отступы между графиками */
+            height: 400px;
+            position: relative;
+        }
+        canvas {
+            display: block; /* Исправляет кривизну графиков */
+            width: 100% !important;
+            height: 100% !important; /* Сделаем график адаптивным */
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #003366;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Графики и статистика по глобальному потеплению</h1>
+    </header>
+    <div class="container">
+        <!-- График 1: Средняя температура за последние десятилетия -->
+        <div class="chart-container">
+            <h2>Средняя температура за последние десятилетия</h2>
+            <canvas id="tempChart"></canvas>
+        </div>
+
+        <!-- График 2: Уровень углекислого газа -->
+        <div class="chart-container">
+            <h2>Уровень углекислого газа (CO2)</h2>
+            <canvas id="co2Chart"></canvas>
+        </div>
+
+        <!-- График 3: Тающие льды -->
+        <div class="chart-container">
+            <h2>Тающие льды</h2>
+            <canvas id="iceChart"></canvas>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024. Все права защищены.</p>
+    </footer>
+
+    <script>
+        // График 1: Средняя температура за последние десятилетия
+        var ctx1 = document.getElementById('tempChart').getContext('2d');
+        var tempChart = new Chart(ctx1, {
+            type: 'line',
+            data: {
+                labels: ['1980', '1990', '2000', '2010', '2020'], // Года
+                datasets: [{
+                    label: 'Средняя температура (°C)',
+                    data: [14.1, 14.5, 14.7, 15.1, 15.6], // Данные о температуре
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: false
+                    }
+                }
+            }
+        });
+
+        // График 2: Уровень углекислого газа (CO2)
+        var ctx2 = document.getElementById('co2Chart').getContext('2d');
+        var co2Chart = new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: ['1980', '1990', '2000', '2010', '2020'],
+                datasets: [{
+                    label: 'Уровень CO2 (ppm)',
+                    data: [340, 355, 370, 400, 420],
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // График 3: Тающие льды
+        var ctx3 = document.getElementById('iceChart').getContext('2d');
+        var iceChart = new Chart(ctx3, {
+            type: 'pie',
+            data: {
+                labels: ['Ледники тают', 'Ледники не тают'],
+                datasets: [{
+                    label: 'Состояние ледников',
+                    data: [75, 25], // Примерные данные
+                    backgroundColor: ['rgba(54, 162, 235, 0.2)', 'rgba(255, 159, 64, 0.2)'],
+                    borderColor: ['rgba(54, 162, 235, 1)', 'rgba(255, 159, 64, 1)'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+    </script>
+</body>
+</html>

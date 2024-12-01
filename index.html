@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Глобальное потепление</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            scroll-behavior: smooth;
+        }
+        header {
+            background: #003366;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .main-title {
+            font-size: 48px;
+            font-weight: bold;
+            color: #003366;
+            text-align: center;
+            margin: 20px 0;
+            position: relative;
+            padding: 50px 20px;
+        }
+        .main-title::before {
+            content: '';
+            background: url('images/background.jpg') no-repeat center center/cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.5;
+        }
+        nav {
+            background: #005599;
+            padding: 10px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 16px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        section {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background: #fff;
+            margin: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        section img {
+            flex: 1;
+            max-width: 45%;
+            height: auto;
+            width: 400px; /* Увеличенные размеры */
+            height: 500px; /* Увеличенные размеры */
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 20px;
+        }
+        section .content {
+            flex: 2;
+        }
+        h1, h2, h3 {
+            color: #003366;
+        }
+        video {
+            width: 100%;
+            height: auto;
+            margin-top: 10px;
+            border-radius: 8px;
+        }
+        .background-video-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+        .background-video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+            z-index: -1;
+        }
+        .overlay-text {
+            position: relative;
+            text-align: center;
+            font-size: 36px;
+            font-weight: bold;
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            z-index: 1;
+        }
+        .btn-container {
+            text-align: center;
+            margin: 20px;
+        }
+        .btn-container a {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #005599;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 8px;
+            transition: background 0.3s ease;
+        }
+        .btn-container a:hover {
+            background: #003366;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <p>Исследуем причины, последствия и возможные решения</p>
+        <h1>Глобальное потепление</h1>
+        
+    </header>
+
+    <div class="main-title">Глобальное потепление</div>
+
+    <nav>
+        <a href="#topic1">Что такое глобальное потепление</a>
+        <a href="#topic2">Чем оно образовано</a>
+        <a href="#topic3">На что оно влияет</a>
+        <a href="#topic4">Что люди могут сделать</a>
+    </nav>
+
+    <section id="topic1">
+        <img src="global_warming.jpg" alt="Глобальное потепление">
+        <div class="content">
+            <h2>Что такое глобальное потепление</h2>
+            <p>Глобальное потепление — это долговременное повышение средней температуры поверхности Земли...</p>
+        </div>
+    </section>
+
+    <section id="topic2">
+        <img src="image 2.png" alt="Парниковые газы">
+        <div class="content">
+            <h2>Чем оно образовано</h2>
+            <p>Главной причиной глобального потепления является увеличение парникового эффекта...</p>
+        </div>
+    </section>
+
+    <section id="topic3">
+        <img src="image 3.png" alt="Последствия глобального потепления">
+        <div class="content">
+            <h2>На что оно влияет</h2>
+            <p>Глобальное потепление оказывает значительное воздействие на нашу планету...</p>
+        </div>
+    </section>
+
+    <section id="topic4">
+        <img src="saveplan.png" alt="Решения">
+        <div class="content">
+            <h2>Что люди могут сделать</h2>
+            <p>Чтобы бороться с глобальным потеплением, важно сокращать выбросы парниковых газов...</p>
+        </div>
+    </section>
+
+    <div class="background-video-container">
+        <video autoplay muted loop>
+            <source src="stock.mp4" type="video/mp4">
+            Ваш браузер не поддерживает элемент видео.
+        </video>
+        <div class="overlay-text">Каждое действие имеет значение. Сделай шаг к спасению планеты!</div>
+    </div>
+
+    <div class="btn-container">
+        <a href="D:\Downloads\css\css code\Графики\statistics.html">Перейти к графикам и статистике</a>
+    </div>
+</body>
+</html>  
